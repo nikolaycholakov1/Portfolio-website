@@ -17,10 +17,10 @@
     />
   </head>
   <body>
-    <!-- header design -->
+    <!-- Header Section -->
 
     <header class="header">
-      <a href="#" class="logo">Portfolio</a>
+      <a href="#" class="logo">Nikolay Cholakov</i></a>
 
       <i class="bx bx-menu" id="menu-icon"></i>
 
@@ -39,7 +39,7 @@
       <div class="home-content">
         <h3>Hello<span>,</span> my name is</h3>
         <h1>Nikolay Cholakov</h1>
-        <h3>And I'm a <span class="multiple-text"></span></h3>
+        <h3>And I'm a <span class="multiple-text"></span> <i class='bx bxs-hand'></i></h3>
         <!-- <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
           accusantium a expedita, iusto quos laboriosam?
@@ -88,7 +88,7 @@
 
       <div class="skills-container">
         <div class="skills-box">
-          <i class="bx bxl-html5"></i>
+          <img src="images/html-5.png" alt="">
           <h3>HTML</h3>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
@@ -98,7 +98,7 @@
         </div>
 
         <div class="skills-box">
-          <i class="bx bxl-css3"></i>
+          <img src="images/css-3.png" alt="">
           <h3>CSS</h3>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
@@ -108,7 +108,7 @@
         </div>
 
         <div class="skills-box">
-          <i class="bx bxl-javascript"></i>
+          <img src="images/js-logo.png" alt="">
           <h3>Java Script</h3>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
@@ -118,7 +118,7 @@
         </div>
 
         <div class="skills-box">
-          <i class="bx bxl-python"></i>
+          <img src="images/python-logo.png" alt="">
           <h3>Python</h3>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
@@ -128,7 +128,7 @@
         </div>
 
         <div class="skills-box">
-          <i class="bx bxl-django"></i>
+          <img src="images/django-logo.ico" alt="">
           <h3>Django</h3>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
@@ -138,7 +138,7 @@
         </div>
 
         <div class="skills-box">
-          <i class="bx bxl-flask"></i>
+          <img src="images/flask-logo.ico" alt="">
           <h3>Flask</h3>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
@@ -247,20 +247,34 @@
         method="POST"
       >
         <div class="input-box">
-          <input type="text" id="name" placeholder="Full Name" required />
-          <input type="email" id="email" placeholder="Email Address" required />
+          <!-- Disable Captcha -->
+          <input type="hidden" name="_captcha" value="false" />
+
+          <input
+            type="hidden"
+            name="_next"
+            value="http://127.0.0.1:5500/success.html"
+          />
+
+          <input id="name" name="name" placeholder="First Name" required />
+          <input
+            type="text"
+            name="LastName"
+            placeholder="Second Name"
+            required
+          />
         </div>
 
         <div class="input-box">
           <input
-            type="number"
-            id="number"
-            placeholder="Mobile Number"
+            type="email"
+            name="email"
+            placeholder="Email Address"
             required
           />
           <input
             type="text"
-            id="subject"
+            name="subject"
             placeholder="Email Subject"
             required
           />
@@ -268,13 +282,12 @@
 
         <textarea
           name=""
-          id="message"
-          cols="30"
           rows="10"
+          name="message"
           placeholder="Your Message"
         ></textarea>
         <button type="submit" id="form-submit-btn" class="button">
-          Send Message
+          <a href="success.html">Send Message</a>
         </button>
       </form>
     </section>
