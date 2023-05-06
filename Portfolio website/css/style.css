@@ -16,6 +16,8 @@
   --second-bg-color: #323946;
   --text-color: #fff;
   --main-color: #0ef;
+  --bg-color-light: #e4e5f1;
+  --second-bg-color-light: #d2d3db;
 }
 
 html {
@@ -55,6 +57,34 @@ section {
   color: var(--text-color);
   font-weight: 600;
   cursor: default;
+}
+
+.lights i {
+  display: inline-block;
+  padding: 1.5rem 1.5rem;
+  cursor: pointer;
+  border-radius: 4rem;
+  box-shadow: none;
+  color: var(--second-bg-color);
+  transition: 0.5s ease;
+}
+
+.lights i:hover {
+  background-color: var(--main-color);
+}
+
+.lights i:hover {
+  background-color: var(--main-color);
+}
+
+.lights buitton.dark {
+  background-color: var(--bg-color);
+  color: white;
+}
+
+.lights i.light {
+  background-color: var(--second-bg-color);
+  color: white;
 }
 
 .navbar a {
@@ -138,6 +168,7 @@ span {
   color: var(--main-color);
   margin: 3rem 1.5rem 3rem 0;
   transition: 0.5s ease;
+  overflow: hidden;
 }
 
 .social-media a:hover {
@@ -164,12 +195,12 @@ span {
   transition: 0.5s ease;
 }
 
-.cv {
-  font-size: 3rem;
-}
-
 .button:hover {
   box-shadow: 0 0 1rem var(--main-color);
+}
+
+.cv {
+  font-size: 3rem;
 }
 
 .about {
@@ -216,7 +247,7 @@ span {
 }
 
 .skills-container .skills-box {
-  flex: 1 1 30rem;
+  flex: 0 1 30rem;
   background-color: var(--second-bg-color);
   padding: 3rem 2rem 4rem;
   border-radius: 2rem;
@@ -230,10 +261,10 @@ span {
   transform: scale(1.02);
 }
 
-.skills-box i {
+/* .skills-box i {
   font-size: 7rem;
   color: var(--main-color);
-}
+} */
 
 .skills-box h3 {
   font-size: 2.6rem;
@@ -336,6 +367,10 @@ span {
   margin-bottom: 3rem;
 }
 
+.contact a {
+  color: var(--second-bg-color);
+}
+
 .contact form .input-box {
   display: flex;
   justify-content: space-between;
@@ -364,6 +399,25 @@ span {
 .contact form .button {
   cursor: pointer;
   margin-top: 2rem;
+}
+
+/* SUCCESS PAGE CSS */
+.message-box {
+  display: flex;
+  font-size: 3rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 33rem 9%;
+}
+
+.message-box h1 {
+  margin-bottom: 5rem;
+}
+
+.message-box a {
+  color: var(--text-color);
+  text-decoration: underline;
 }
 
 /* FOOTER */

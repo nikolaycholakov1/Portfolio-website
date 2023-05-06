@@ -1,33 +1,125 @@
 // Contact form
 
+// const allUserInputs = {
+//   name: document.getElementById("name"),
+//   email: document.getElementById("email"),
+//   number: document.getElementById("number"),
+//   subject: document.getElementById("subject"),
+//   message: document.getElementById("message"),
+// };
+
 // const submitButton = document.querySelector("#contact-form > button");
 // submitButton.addEventListener("click", (event) => {
 //   if (event) {
 //     event.preventDefault();
 //   }
 
-//   const allUserInputs = {
-//     name: document.getElementById("name"),
-//     email: document.getElementById("email"),
-//     number: document.getElementById("number"),
-//     subject: document.getElementById("subject"),
-//     message: document.getElementById("message"),
-//   };
+//   let allFieldsAreValid = Object.values(allUserInputs).every((input) => {
+//     input.value != "";
+//   });
+
+//   if (allFieldsAreValid) {
+//     console.log("invalid");
+//     return;
+//   }
 
 //   const { name, email, number, subject, message } = allUserInputs;
-
-//   const body = `${name.value} ${email.value} ${number.value} ${subject} ${message.value}`;
-
-//   Email.send({
-//     SecureToken: "36b2f18b-6197-4171-9092-80067a498f1e",
-//     To: "8wayzz2beamazed@gmail.com",
-//     From: "8wayzz2beamazed@gmail.com",
-//     Subject: "contact message",
-//     Body: body,
-//   }).then((message) => alert(message));
 // });
 
-// toggle icon navbar
+// Light and Dark Mode
+
+function setLightMode() {
+  const darkModeBtn = document.getElementById("dark-mode");
+
+  const root = document.querySelector(":root");
+  const body = document.querySelector("body");
+  const p = document.querySelector("p");
+
+  lightModeBtn.style.setProperty("display", "none");
+  root.style.setProperty("--bg-color", "var(--bg-color-light)");
+  root.style.setProperty("--second-bg-color", "var(--second-bg-color-light)");
+  body.style.backgroundColor = "var(--bg-color)";
+  body.style.color = "black";
+  p.style.backgroundColor = "var(--second-bg-color)";
+}
+
+function setDarkMode() {
+  const lightModeBtn = document.getElementById("light-mode");
+  const root = document.querySelector(":root");
+  const body = document.querySelector("body");
+  const p = document.querySelector("p");
+
+  lightModeBtn.style.setProperty("display", "none");
+  root.style.setProperty("--bg-color", "#1f242d");
+  root.style.setProperty("--second-bg-color", "#323946");
+  body.style.backgroundColor = "var(--bg-color)";
+  body.style.color = "white";
+  p.style.backgroundColor = "var(--second-bg-color)";
+}
+
+const modeToggle = document.getElementById("mode-toggle");
+
+function toggleMode() {
+  const root = document.documentElement;
+  const isDarkMode = root.classList.toggle("dark");
+
+  if (isDarkMode) {
+    modeToggle.classList.remove("light");
+    modeToggle.classList.add("dark");
+  } else {
+    modeToggle.classList.remove("dark");
+    modeToggle.classList.add("light");
+  }
+}
+
+modeToggle.addEventListener("click", toggleMode);
+
+// const darkModeBtn = document.getElementById("dark-mode");
+// const lightModeBtn = document.getElementById("light-mode");
+// const fs = require("fs");
+// const cssFilePath = "style.css";
+// let cssFileContents = fs.readFileSync(cssFilePath, "utf-8");
+
+// cssFileContents = cssFileContents.replace(
+//   "--bg-color: #1f242d;",
+//   "--bg-color-light: #cecdcd;"
+// );
+// cssFileContents = cssFileContents.replace(
+//   "--second-bg-color: #323946;",
+//   "--second-bg-color-light: rgb(150, 146, 146);"
+// );
+
+// fs.writeFileSync(cssFilePath, cssFileContents);
+
+// let isDarkMode = false;
+// setMode(isDarkMode);
+
+// darkModeBtn.addEventListener("click", () => {
+//   isDarkMode = true;
+//   setMode(isDarkMode);
+// });
+
+// lightModeBtn.addEventListener("click", () => {
+//   isDarkMode = false;
+//   setMode(isDarkMode);
+// });
+
+// function setMode(isDarkMode) {
+//   const body = document.body;
+//   if (isDarkMode) {
+//     body.classList.add("dark-mode");
+//     body.classList.remove("light-mode");
+//     darkModeBtn.style.display = "none";
+//     lightModeBtn.style.display = "inline-block";
+//   } else {
+//     body.classList.add("light-mode");
+//     body.classList.remove("dark-mode");
+//     darkModeBtn.style.display = "inline-block";
+//     lightModeBtn.style.display = "none";
+//   }
+// }
+
+// Toggle icon navbar
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 
