@@ -1,123 +1,23 @@
-// Contact form
-
-// const allUserInputs = {
-//   name: document.getElementById("name"),
-//   email: document.getElementById("email"),
-//   number: document.getElementById("number"),
-//   subject: document.getElementById("subject"),
-//   message: document.getElementById("message"),
-// };
-
-// const submitButton = document.querySelector("#contact-form > button");
-// submitButton.addEventListener("click", (event) => {
-//   if (event) {
-//     event.preventDefault();
-//   }
-
-//   let allFieldsAreValid = Object.values(allUserInputs).every((input) => {
-//     input.value != "";
-//   });
-
-//   if (allFieldsAreValid) {
-//     console.log("invalid");
-//     return;
-//   }
-
-//   const { name, email, number, subject, message } = allUserInputs;
-// });
-
 // Light and Dark Mode
-
 function setLightMode() {
-  const darkModeBtn = document.getElementById("dark-mode");
+  document.documentElement.style.setProperty("--bg-color", "gray");
+  document.documentElement.style.setProperty("--second-bg-color", "lightgray");
+  document.documentElement.style.setProperty("--text-color", "black");
 
-  const root = document.querySelector(":root");
-  const body = document.querySelector("body");
-  const p = document.querySelector("p");
-
-  lightModeBtn.style.setProperty("display", "none");
-  root.style.setProperty("--bg-color", "var(--bg-color-light)");
-  root.style.setProperty("--second-bg-color", "var(--second-bg-color-light)");
-  body.style.backgroundColor = "var(--bg-color)";
-  body.style.color = "black";
-  p.style.backgroundColor = "var(--second-bg-color)";
+  document.querySelector(".light").style.display = "none";
+  document.querySelector(".dark").style.display = "block";
 }
 
 function setDarkMode() {
-  const lightModeBtn = document.getElementById("light-mode");
-  const root = document.querySelector(":root");
-  const body = document.querySelector("body");
-  const p = document.querySelector("p");
+  document.documentElement.style.setProperty("--bg-color", "#1f242d");
+  document.documentElement.style.setProperty("--second-bg-color", "#323946");
+  document.documentElement.style.setProperty("--text-color", "#fff");
 
-  lightModeBtn.style.setProperty("display", "none");
-  root.style.setProperty("--bg-color", "#1f242d");
-  root.style.setProperty("--second-bg-color", "#323946");
-  body.style.backgroundColor = "var(--bg-color)";
-  body.style.color = "white";
-  p.style.backgroundColor = "var(--second-bg-color)";
+  // Hide dark mode button
+  document.querySelector(".dark").style.display = "none";
+  // Show light mode button
+  document.querySelector(".light").style.display = "block";
 }
-
-const modeToggle = document.getElementById("mode-toggle");
-
-function toggleMode() {
-  const root = document.documentElement;
-  const isDarkMode = root.classList.toggle("dark");
-
-  if (isDarkMode) {
-    modeToggle.classList.remove("light");
-    modeToggle.classList.add("dark");
-  } else {
-    modeToggle.classList.remove("dark");
-    modeToggle.classList.add("light");
-  }
-}
-
-modeToggle.addEventListener("click", toggleMode);
-
-// const darkModeBtn = document.getElementById("dark-mode");
-// const lightModeBtn = document.getElementById("light-mode");
-// const fs = require("fs");
-// const cssFilePath = "style.css";
-// let cssFileContents = fs.readFileSync(cssFilePath, "utf-8");
-
-// cssFileContents = cssFileContents.replace(
-//   "--bg-color: #1f242d;",
-//   "--bg-color-light: #cecdcd;"
-// );
-// cssFileContents = cssFileContents.replace(
-//   "--second-bg-color: #323946;",
-//   "--second-bg-color-light: rgb(150, 146, 146);"
-// );
-
-// fs.writeFileSync(cssFilePath, cssFileContents);
-
-// let isDarkMode = false;
-// setMode(isDarkMode);
-
-// darkModeBtn.addEventListener("click", () => {
-//   isDarkMode = true;
-//   setMode(isDarkMode);
-// });
-
-// lightModeBtn.addEventListener("click", () => {
-//   isDarkMode = false;
-//   setMode(isDarkMode);
-// });
-
-// function setMode(isDarkMode) {
-//   const body = document.body;
-//   if (isDarkMode) {
-//     body.classList.add("dark-mode");
-//     body.classList.remove("light-mode");
-//     darkModeBtn.style.display = "none";
-//     lightModeBtn.style.display = "inline-block";
-//   } else {
-//     body.classList.add("light-mode");
-//     body.classList.remove("dark-mode");
-//     darkModeBtn.style.display = "inline-block";
-//     lightModeBtn.style.display = "none";
-//   }
-// }
 
 // Toggle icon navbar
 let menuIcon = document.querySelector("#menu-icon");
@@ -182,5 +82,134 @@ const typed = new Typed(".multiple-text", {
   typeSpeed: 100,
   backSpeed: 100,
   backDelay: 1000,
-  //   loop: true,
+  loop: false,
 });
+
+// ABOUT SECTION LAPTOP BUTTONS
+const frontEndButton = document.querySelector(".frontend-button");
+const frontEndSkillsContainer = document.querySelector(".front-end-skills-box");
+
+const backEndButton = document.querySelector(".backend-button");
+const backEndSkillsContainer = document.querySelector(".back-end-skills-box");
+
+const toolsButton = document.querySelector(".tools-button");
+const toolsContainer = document.querySelector(".tools-skills-box");
+
+frontEndButton.addEventListener("click", frontEndBtnHandler);
+backEndButton.addEventListener("click", backEndBtnhandler);
+toolsButton.addEventListener("click", toolsBtnHandler);
+
+function frontEndBtnHandler() {
+  frontDisProp = getDisplayProperty(frontEndSkillsContainer);
+  backDisProp = getDisplayProperty(backEndSkillsContainer);
+  toolsDisProp = getDisplayProperty(toolsContainer);
+
+  // if (backDisProp === "grid") {
+  //   backEndSkillsContainer.style.display = "none";
+  // }
+
+  // if (toolsDisProp === "grid") {
+  //   toolsContainer.style.display = "none";
+  // }
+
+  // if (frontDisProp === "none") {
+  //   frontEndSkillsContainer.style.display = "grid";
+  // } else {
+  //   frontEndSkillsContainer.style.display = "none";
+  // }
+
+  let newProperty = changeDisplayProperty(
+    toolsDisProp,
+    toolsContainer,
+    backDisProp,
+    backEndSkillsContainer,
+    frontDisProp
+  );
+
+  frontEndSkillsContainer.style.display = newProperty;
+}
+
+function backEndBtnhandler() {
+  frontDisProp = getDisplayProperty(frontEndSkillsContainer);
+  backDisProp = getDisplayProperty(backEndSkillsContainer);
+  toolsDisProp = getDisplayProperty(toolsContainer);
+
+  // if (frontDisProp === "grid") {
+  //   frontEndSkillsContainer.style.display = "none";
+  // }
+
+  // if (toolsDisProp === "grid") {
+  //   toolsContainer.style.display = "none";
+  // }
+
+  // if (backDisProp === "none") {
+  //   backEndSkillsContainer.style.display = "grid";
+  // } else {
+  //   backEndSkillsContainer.style.display = "none";
+  // }
+  let newProperty = changeDisplayProperty(
+    frontDisProp,
+    frontEndSkillsContainer,
+    toolsDisProp,
+    toolsContainer,
+    backDisProp
+  );
+
+  backEndSkillsContainer.style.display = newProperty;
+}
+
+function toolsBtnHandler() {
+  frontDisProp = getDisplayProperty(frontEndSkillsContainer);
+  backDisProp = getDisplayProperty(backEndSkillsContainer);
+  toolsDisProp = getDisplayProperty(toolsContainer);
+
+  // if (frontDisProp === "grid") {
+  //   frontEndSkillsContainer.style.display = "none";
+  // } else if (backDisProp === "grid") {
+  //   backEndSkillsContainer.style.display = "none";
+  // }
+  // if (toolsDisProp === "none") {
+  //   toolsContainer.style.display = "grid";
+  // } else {
+  //   toolsContainer.style.display = "none";
+  // }
+
+  let newProperty = changeDisplayProperty(
+    frontDisProp,
+    frontEndSkillsContainer,
+    backDisProp,
+    backEndSkillsContainer,
+    toolsDisProp
+  );
+
+  toolsContainer.style.display = newProperty;
+}
+
+function changeDisplayProperty(
+  prop1,
+  prop1Container,
+  prop2,
+  prop2Container,
+  prop3
+) {
+  if (prop1 === "grid") {
+    prop1Container.style.display = "none";
+  } else if (prop2 === "grid") {
+    prop2Container.style.display = "none";
+  }
+  if (prop3 === "none") {
+    prop3 = "grid";
+  } else {
+    prop3 = "none";
+  }
+
+  return prop3;
+}
+
+function getDisplayProperty(container) {
+  const displayProperty = window
+    .getComputedStyle(container)
+    .getPropertyValue("display");
+
+  return displayProperty;
+}

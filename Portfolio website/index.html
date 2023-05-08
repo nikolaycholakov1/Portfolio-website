@@ -9,6 +9,7 @@
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="css/style.css " />
     <link rel="stylesheet" href="css/media.css " />
+    <link rel="stylesheet" href="css/laptop.css" />
 
     <!-- ICONS -->
     <link
@@ -20,19 +21,20 @@
     <!-- Header Section -->
 
     <header class="header">
-      <a href="#" class="logo">Nikolay Cholakov</i></a>
+      <div class="logo">
+        <h2>NMC.DEV</h2>
+      </div>
 
       <i class="bx bx-menu" id="menu-icon"></i>
 
       <div class="lights">
         <!-- <button id="light-mode"><i class='bx bxs-sun' ></i></button>
         <button id="dark-mode"><i class='bx bxs-moon' ></i></button> -->
-        <button onclick="setLightMode()"><i class='bx bxs-sun' ></i></button>
-        <button onclick="setDarkMode()"><i class='bx bxs-moon' ></i></button>
+        <i onclick="setLightMode()" class="bx bxs-sun light"></i>
+        <i onclick="setDarkMode()" class="bx bxs-moon dark"></i>
       </div>
 
       <nav class="navbar">
-        
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -54,8 +56,11 @@
         </p> -->
         <div class="social-media">
           <a href="https://github.com/nikolaycholakov1" target="_blank"
-            ><img src="images/github-logo.ico" alt=""></a>
-          <a href="#" target="_blank"><img src="images/linkedin-logo.ico" alt=""></a>
+            ><img src="images/github-logo.ico" alt=""
+          /></a>
+          <a href="#" target="_blank"
+            ><img src="images/linkedin-logo.ico" alt=""
+          /></a>
         </div>
         <div class="contact-details">
           <p><span>e-mail:</span> nikolaycholakovnmc@gmail.com</p>
@@ -65,7 +70,7 @@
       </div>
 
       <div class="home-img">
-        <img src="images/profileSmall.jpg" alt="" />
+        <img src="svg images/developer activity.svg" alt="" />
       </div>
     </section>
 
@@ -75,53 +80,136 @@
       <!-- <div class="home-img">
         <img src="images/profileSmall.jpg" alt="" />
       </div> -->
-      <i class='bx bx-code'></i>
+      <img src="svg images/hacker mindset.svg" alt="" />
       <div class="about-content">
         <h2 class="heading">About <span>Me</span></h2>
         <h3>Web Developer</h3>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
-          deleniti aperiam ab quia libero, rerum blanditiis pariatur atque
-          ratione ullam.
+          Passionate web developer creating user-friendly websites with
+          expertise in programming languages and frameworks.
         </p>
-        <a href="#" class="button">Read More</a>
       </div>
     </section>
 
     <!-- Skills section -->
 
     <section class="skills" id="skills">
-      <h2 class="heading">Technology <span>stack</span></h2>
-
+      <h2 class="heading">My <span>skills</span></h2>
       <div class="skills-container">
-        <div class="skills-box">
-          <img src="images/html-5.png" alt="">
-          <h3>HTML</h3>
+        <div class="laptop">
+          <div class="screen">
+            <div class="lcd">
+              <img src="images/download.webp" alt="" />
+              <div class="front-end">
+                <button class="frontend-button">
+                  <img src="images/front-end-icon.png" alt="" />
+                </button>
+                <p>Front End</p>
+              </div>
+              <div class="back-end">
+                <button class="backend-button">
+                  <img src="images/back-end-icon.png" alt="" />
+                </button>
+                <p>Back End</p>
+              </div>
+              <div class="tools">
+                <button class="tools-button">
+                  <img src="images/tool-icon.png" alt="" />
+                </button>
+                <p>Tools</p>
+              </div>
+
+              <!-- <img src="images/xp-task-bar.png" alt="" /> -->
+            </div>
+
+            <div class="glass-frame"></div>
+            <div class="screen-reflection"></div>
+          </div>
+          <div class="keyboard top"></div>
+          <div class="keyboard bottom"></div>
         </div>
 
-        <div class="skills-box">
-          <img src="images/css-3.png" alt="">
-          <h3>CSS</h3>
-        </div>
+        <div class="skills-icons-container">
+          <div class="front-end-skills-box">
+            <div class="skills-box">
+              <img src="images/html-5.png" alt="" />
+              <h3>HTML</h3>
+            </div>
 
-        <div class="skills-box">
-          <img src="images/js-logo.png" alt="">
-          <h3>Java Script</h3>
-        </div>
+            <div class="skills-box">
+              <img src="images/css-3.png" alt="" />
+              <h3>CSS</h3>
+            </div>
 
-        <div class="skills-box">
-          <img src="images/python-logo.png" alt="">
-          <h3>Python</h3>
-        </div>
+            <div class="skills-box">
+              <img src="images/sass-icon.png" alt="" />
+              <h3>SASS</h3>
+            </div>
 
-        <div class="skills-box">
-          <img src="images/django-logo.ico" alt="">
-          <h3>Django</h3>
-        </div>
+            <div class="skills-box">
+              <img src="images/react-icon.png" alt="" />
+              <h3>React</h3>
+            </div>
 
-        <div class="skills-box">
-          <img src="images/flask-logo.ico" alt="">
-          <h3>Flask</h3>
+            <div class="skills-box">
+              <img src="images/nodejs-icon.png" alt="" />
+              <h3>Node.js</h3>
+            </div>
+          </div>
+
+          <div class="back-end-skills-box">
+            <div class="skills-box">
+              <img src="images/python-logo.png" alt="" />
+              <h3>Python</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/js-logo.png" alt="" />
+              <h3>Java Script</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/postgresql-icon.png" alt="" />
+              <h3>PostgreSQL</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/django-logo.ico" alt="" />
+              <h3>Django</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/flask-logo.ico" alt="" />
+              <h3>Flask</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/api-icon.png" alt="" />
+              <h3>APIs</h3>
+            </div>
+          </div>
+
+          <div class="tools-skills-box">
+            <div class="skills-box">
+              <img src="images/pycharm-icon.png" alt="" />
+              <h3>Pycharm</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/visual-studio-icon.png" alt="" />
+              <h3>VS Code</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/git-icon.png" alt="" />
+              <h3>Git</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/postman-icon.png" alt="" />
+              <h3>Postman</h3>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -274,7 +362,9 @@
 
     <footer class="footer">
       <div class="footer-text">
-        <p>Copyright &copy; 2023 by Name | All rights reserved</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, amet.
+        </p>
       </div>
 
       <div class="footer-iconTop">

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap");
 
 * {
   padding: 0;
@@ -15,9 +16,7 @@
   --bg-color: #1f242d;
   --second-bg-color: #323946;
   --text-color: #fff;
-  --main-color: #0ef;
-  --bg-color-light: #e4e5f1;
-  --second-bg-color-light: #d2d3db;
+  --main-color: #00eeff;
 }
 
 html {
@@ -31,16 +30,17 @@ body {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 85vh;
   padding: 10rem 9% 2rem;
 }
 
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
+  /* top: 0; */
+  /* left: 0; */
   width: 100%;
-  padding: 2rem 9%;
+  height: 10vh;
+  padding: 2rem 10%;
   background-color: var(--bg-color);
   display: flex;
   justify-content: space-between;
@@ -56,39 +56,34 @@ section {
   font-size: 2.5rem;
   color: var(--text-color);
   font-weight: 600;
+  letter-spacing: 0.8rem;
   cursor: default;
+  text-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color),
+    0 0 40px var(--main-color), 0 0 80px var(--main-color);
+}
+
+.logo h2 {
+  font-family: "Neonderthaw", "Poppins", sans-serif;
 }
 
 .lights i {
   display: inline-block;
-  padding: 1.5rem 1.5rem;
+  font-size: 4rem;
   cursor: pointer;
-  border-radius: 4rem;
-  box-shadow: none;
   color: var(--second-bg-color);
-  transition: 0.5s ease;
 }
 
-.lights i:hover {
-  background-color: var(--main-color);
+.lights .dark {
+  color: black;
+  display: none;
 }
 
-.lights i:hover {
-  background-color: var(--main-color);
-}
-
-.lights buitton.dark {
-  background-color: var(--bg-color);
-  color: white;
-}
-
-.lights i.light {
-  background-color: var(--second-bg-color);
-  color: white;
+.lights .light {
+  color: rgb(226, 160, 18);
 }
 
 .navbar a {
-  font-size: 2.7rem;
+  font-size: 3rem;
   color: var(--text-color);
   margin-left: 4rem;
   transition: 0.3s;
@@ -111,12 +106,13 @@ section {
 
 .home {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  font-size: 100%;
 }
 
 .home-img img {
-  width: 35vw;
+  max-width: 35vw;
   animation: floatImage 4s ease-in-out infinite;
 }
 
@@ -205,48 +201,62 @@ span {
 
 .about {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 2rem;
   background-color: var(--second-bg-color);
 }
 
-.about-img img {
-  width: 35vw;
+.about img {
+  max-width: 30vw;
 }
-
 .heading {
   text-align: center;
   font-size: 4.5rem;
 }
 
 .about-content h2 {
-  text-align: left;
+  text-align: center;
   line-height: 1.2;
+  margin-bottom: 3rem;
+  font-size: 18rem;
+  position: absolute;
+  color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.about-content span {
+  color: rgba(0, 238, 255, 0.4);
 }
 
 .about-content h3 {
-  font-size: 2.6rem;
+  font-size: 4.6rem;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 .about-content p {
-  font-size: 1.6rem;
+  font-size: 3.6rem;
+  font-weight: bold;
   margin: 2rem 0 3rem;
+  max-width: 50vw;
+  text-align: center;
 }
 
 .skills h2 {
   margin-bottom: 5rem;
+  /* text-align: center; */
 }
 
 .skills-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
 }
 
-.skills-container .skills-box {
+/* .skills-container .skills-box {
   flex: 0 1 30rem;
   background-color: var(--second-bg-color);
   padding: 3rem 2rem 4rem;
@@ -259,20 +269,39 @@ span {
 .skills-container .skills-box:hover {
   border-color: var(--main-color);
   transform: scale(1.02);
+} */
+
+.front-end-skills-box,
+.back-end-skills-box,
+.tools-skills-box {
+  padding: 10rem 3rem 10rem;
+  display: none;
+  border-radius: 2rem;
+  background-color: var(--second-bg-color);
+  text-align: center;
+  border: 0.2rem solid var(--bg-color);
+  transition: 0.5s ease;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
 }
 
-/* .skills-box i {
-  font-size: 7rem;
-  color: var(--main-color);
-} */
+.front-end-skills-box:hover,
+.back-end-skills-box:hover,
+.tools-skills-box:hover {
+  border: 0.2rem solid var(--main-color);
+  box-shadow: 0px 0px 10px 1px rgba(0, 238, 255, 1);
+}
+
+.skills-box {
+  /* margin: 2rem 2rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .skills-box h3 {
   font-size: 2.6rem;
-}
-
-.skills-box p {
-  font-size: 1.6rem;
-  margin: 1rem 0 3rem;
+  margin-top: 2rem;
 }
 
 /* PORTFOLIO STYLING */
@@ -451,5 +480,5 @@ span {
 
 .footer-iconTop a i {
   font-size: 2.4rem;
-  background-color: var(--second-bg-color);
+  color: var(--bg-color);
 }
