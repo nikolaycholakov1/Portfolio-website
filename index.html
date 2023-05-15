@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="css/style.css " />
+    <link rel="stylesheet" href="css/media.css " />
+    <link rel="stylesheet" href="css/laptop.css" />
+
+    <!-- ICONS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+
+    <header class="header">
+      <div class="logo">
+        <h2>NMC.DEV</h2>
+      </div>
+
+      <i class="bx bx-menu" id="menu-icon"></i>
+
+      <div class="lights">
+        <!-- <button id="light-mode"><i class='bx bxs-sun' ></i></button>
+        <button id="dark-mode"><i class='bx bxs-moon' ></i></button> -->
+        <i onclick="setLightMode()" class="bx bxs-sun light"></i>
+        <i onclick="setDarkMode()" class="bx bxs-moon dark"></i>
+      </div>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Projects</a>
+        <a href="#contact">Contact me</a>
+      </nav>
+    </header>
+
+    <!-- Home Section -->
+
+    <section class="home" id="home">
+      <div class="home-content">
+        <h3>Hello<span>,</span> my name is</h3>
+        <h1>Nikolay Cholakov</h1>
+        <h3>And I'm a <span class="multiple-text"></span></h3>
+        <!-- <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
+          accusantium a expedita, iusto quos laboriosam?
+        </p> -->
+        <div class="social-media">
+          <a href="https://github.com/nikolaycholakov1" target="_blank"
+            ><img src="images/github-logo.ico" alt=""
+          /></a>
+          <a href="#" target="_blank"
+            ><img src="images/linkedin-logo.ico" alt=""
+          /></a>
+        </div>
+        <div class="contact-details">
+          <p><span>e-mail:</span> nikolaycholakovnmc@gmail.com</p>
+          <p><span>phone number:</span> +359884871445</p>
+        </div>
+        <a href="#" class="button cv">Download CV</a>
+      </div>
+
+      <div class="home-img">
+        <img src="svg images/developer activity.svg" alt="" />
+      </div>
+    </section>
+
+    <!-- About section -->
+
+    <section class="about" id="about">
+      <!-- <div class="home-img">
+        <img src="images/profileSmall.jpg" alt="" />
+      </div> -->
+      <img src="svg images/hacker mindset.svg" alt="" />
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>Web Developer</h3>
+        <p>
+          Passionate web developer creating user-friendly websites with
+          expertise in programming languages and frameworks.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills section -->
+
+    <section class="skills" id="skills">
+      <h2 class="heading">My <span>skills</span></h2>
+      <div class="skills-container">
+        <div class="laptop">
+          <div class="screen">
+            <div class="lcd">
+              <img src="images/download.webp" alt="" />
+              <div class="front-end">
+                <button class="frontend-button">
+                  <img src="images/front-end-icon.png" alt="" />
+                </button>
+                <p>Front End</p>
+              </div>
+              <div class="back-end">
+                <button class="backend-button">
+                  <img src="images/back-end-icon.png" alt="" />
+                </button>
+                <p>Back End</p>
+              </div>
+              <div class="tools">
+                <button class="tools-button">
+                  <img src="images/tool-icon.png" alt="" />
+                </button>
+                <p>Tools</p>
+              </div>
+
+              <!-- <img src="images/xp-task-bar.png" alt="" /> -->
+            </div>
+
+            <div class="glass-frame"></div>
+            <div class="screen-reflection"></div>
+          </div>
+          <div class="keyboard top"></div>
+          <div class="keyboard bottom"></div>
+        </div>
+
+        <div class="skills-icons-container">
+          <div class="front-end-skills-box">
+            <div class="skills-box">
+              <img src="images/html-5.png" alt="" />
+              <h3>HTML</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/css-3.png" alt="" />
+              <h3>CSS</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/sass-icon.png" alt="" />
+              <h3>SASS</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/react-icon.png" alt="" />
+              <h3>React</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/nodejs-icon.png" alt="" />
+              <h3>Node.js</h3>
+            </div>
+          </div>
+
+          <div class="back-end-skills-box">
+            <div class="skills-box">
+              <img src="images/python-logo.png" alt="" />
+              <h3>Python</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/js-logo.png" alt="" />
+              <h3>Java Script</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/postgresql-icon.png" alt="" />
+              <h3>PostgreSQL</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/django-logo.ico" alt="" />
+              <h3>Django</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/flask-logo.ico" alt="" />
+              <h3>Flask</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/api-icon.png" alt="" />
+              <h3>APIs</h3>
+            </div>
+          </div>
+
+          <div class="tools-skills-box">
+            <div class="skills-box">
+              <img src="images/pycharm-icon.png" alt="" />
+              <h3>Pycharm</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/visual-studio-icon.png" alt="" />
+              <h3>VS Code</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/git-icon.png" alt="" />
+              <h3>Git</h3>
+            </div>
+
+            <div class="skills-box">
+              <img src="images/postman-icon.png" alt="" />
+              <h3>Postman</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio section -->
+
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Latest <span>Projects</span></h2>
+
+      <div class="portfolio-container">
+        <div class="portfolio-box">
+          <img src="images/download.webp" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Web design</h4>
+            <p>
+              A Portfolio website that is designed to look like windows 10. It
+              has multiple working buttons and other functionality
+            </p>
+            <div class="utilised-skills">
+              <div>HTML</div>
+              <div>CSS</div>
+              <div>Java Script</div>
+            </div>
+            <div class="buttons">
+              <button class="button">
+                <a href="#">Github</a>
+              </button>
+
+              <button class="button">
+                <a href="#">Demo</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="images/download.webp" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Web design</h4>
+            <p>
+              A Portfolio website that is designed to look like windows 10. It
+              has multiple working buttons and other functionality
+            </p>
+            <div class="utilised-skills">
+              <div>HTML</div>
+              <div>CSS</div>
+              <div>Java Script</div>
+            </div>
+            <div class="buttons">
+              <button class="button">
+                <a href="#">Github</a>
+              </button>
+
+              <button class="button">
+                <a href="#">Demo</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="images/download.webp" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Web design</h4>
+            <p>
+              A Portfolio website that is designed to look like windows 10. It
+              has multiple working buttons and other functionality
+            </p>
+            <div class="utilised-skills">
+              <div>HTML</div>
+              <div>CSS</div>
+              <div>Java Script</div>
+            </div>
+            <div class="buttons">
+              <button class="button">
+                <a href="#">Github</a>
+              </button>
+
+              <button class="button">
+                <a href="#">Demo</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="images/download.webp" alt="" />
+
+          <div class="portfolio-layer">
+            <h4>Web design</h4>
+            <p>
+              A Portfolio website that is designed to look like windows 10. It
+              has multiple working buttons and other functionality
+            </p>
+            <div class="utilised-skills">
+              <div>HTML</div>
+              <div>CSS</div>
+              <div>Java Script</div>
+            </div>
+            <div class="buttons">
+              <button class="button">
+                <a href="#">Github</a>
+              </button>
+
+              <button class="button">
+                <a href="#">Demo</a>
+              </button>
+
+              <button class="button">
+                <a href="#">Youtube</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Sectionn -->
+
+    <section class="section contact" id="contact">
+      <h2 class="heading">Contact <span>Me!</span></h2>
+
+      <form
+        action="https://formsubmit.co/9c34c3de5059db8f28bca1879baebc80"
+        id="contact-form"
+        method="POST"
+      >
+        <div class="input-box">
+          <!-- Disable Captcha -->
+          <input type="hidden" name="_captcha" value="false" />
+
+          <input
+            type="hidden"
+            name="_next"
+            value="http://127.0.0.1:5500/index.html"
+          />
+
+          <input id="name" name="name" placeholder="John Doe" required />
+          <input type="text" name="phone" placeholder="0881234567" required />
+        </div>
+
+        <div class="input-box">
+          <input
+            type="email"
+            name="email"
+            placeholder="demo@gmail.com"
+            required
+          />
+          <input type="text" name="subject" placeholder="Job offer" required />
+        </div>
+
+        <!-- TODO: The Text in the message is not in the email -->
+
+        <textarea
+          name=""
+          rows="10"
+          name="message"
+          placeholder="Your Message"
+        ></textarea>
+
+        <!-- <button type="submit" id="form-submit-btn" class="button">
+          <a href="success.html">Send Message</a>
+        </button> -->
+
+        <button
+          data-open-modal
+          type="submit"
+          id="form-submit-btn"
+          class="button"
+        >
+          Send Message
+        </button>
+
+        <dialog data-modal class="modal">
+          <div>Message Sent Successsfully!</div>
+          <button data-close-modal class="button">Close</button>
+        </dialog>
+      </form>
+    </section>
+
+    <!-- Footer section -->
+
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Portfolio website</p>
+      </div>
+
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bxs-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+
+    <!-- Scroll Reveal -->
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- SMTP -->
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <!-- Types JS -->
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- Custom JS -->
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
