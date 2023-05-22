@@ -1,92 +1,80 @@
-const sliderContainer = document.querySelector(".slider-container");
-const carousel = document.querySelector(".carousel");
-const arrowBtns = document.querySelectorAll(".slider-container div.arrow");
-const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-const carouselChildren = [...carousel.children];
-const certificates = document.querySelectorAll(".card img");
-console.log(certificates);
+const track = document.querySelector(".carousel-track");
+const slides = Array.from(track.children);
+const nextBtn = document.querySelector(".carousel-btn-right");
+const previousBtn = document.querySelector(".carousel-btn-left");
+const dotsNav = document.querySelector(".carousel-nav");
+const dots = Array.from(dotsNav.children);
+const slideWidth = slides[0].getBoundingClientRect().width;
 
-let isDragging = false,
-  startX,
-  startScrollLeft,
-  timeoutId;
+// Arrange slides next to each other
+const setSlidePosition = (slide, index) => {
+  slide.style.left = slideWidth * index + "px";
+};
+slides.forEach(setSlidePosition);
 
-//   Get number of cards that can fit in carousel at once
-let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+const moveSlides = (track, currentSlide, targetSlide) => {
+  track.style.transform = "translateX(-" + targetSlide.style.left + ")";
+  currentSlide.classList.remove("current-slide");
+  targetSlide.classList.add("current-slide");
+};
 
-// Insert copies of the last few cards to START of carousel for infinite scrolling
-carouselChildren
-  .slice(-cardPerView)
-  .reverse()
-  .forEach((card) => {
-    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
-  });
+const updateDots = (currentDot, targetDot) => {
+  currentDot.classList.remove("current-slide");
+  targetDot.classList.add("current-slide");
+};
 
-// Insert copies of the last few cards to END of carousel for infinite scrolling
+const hideArrowButtons = (slides, previousBtn, nextBtn, targetIndex) => {
+  if (targetIndex === 0) {
+    previousBtn.classList.add("is-hidden");
+    nextBtn.classList.remove("is-hidden");
+  } else if (targetIndex === slides.length - 1) {
+    previousBtn.classList.remove("is-hidden");
+    nextBtn.classList.add("is-hidden");
+  } else {
+    previousBtn.classList.remove("is-hidden");
+    nextBtn.classList.remove("is-hidden");
+  }
+};
 
-carouselChildren.slice(0, cardPerView).forEach((card) => {
-  carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+// When I click right, move slides to the righ
+nextBtn.addEventListener("click", (e) => {
+  const currentSlide = track.querySelector(".current-slide");
+  const nextSlide = currentSlide.nextElementSibling;
+  const currentDot = dotsNav.querySelector(".current-slide");
+  const nextDot = currentDot.nextElementSibling;
+  const nextIndex = slides.findIndex((slide) => slide === nextSlide);
+
+  moveSlides(track, currentSlide, nextSlide);
+  updateDots(currentDot, nextDot);
+  hideArrowButtons(slides, previousBtn, nextBtn, nextIndex);
 });
 
-//   Add event listeners for the arrow buttons to scroll the carusel left and right
-arrowBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
-  });
+// When I click left, move slides to the left
+previousBtn.addEventListener("click", (e) => {
+  const currentSlide = track.querySelector(".current-slide");
+  const previousSlide = currentSlide.previousElementSibling;
+  const currentDot = dotsNav.querySelector(".current-slide");
+  const previousDot = currentDot.previousElementSibling;
+  const previousIndex = slides.findIndex((slide) => slide === previousSlide);
+
+  moveSlides(track, currentSlide, previousSlide);
+  updateDots(currentDot, previousDot);
+  hideArrowButtons(slides, previousBtn, nextBtn, previousIndex);
 });
 
-const dragStart = (e) => {
-  isDragging = true;
-  carousel.classList.add("dragging");
-  //   Records the initial cursor and position of the carousel
-  startX = e.pageX;
-  startScrollLeft = carousel.scrollLeft;
-};
+// Move Dots indicators
+dotsNav.addEventListener("click", (e) => {
+  // what indicator was clicked on
+  const targetDot = e.target.closest("button");
 
-const dragging = (e) => {
-  if (!isDragging) return; // If dragging is false, return from here
-  // Updates the scroll position of the carousel based on the cursor movement
-  carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-};
+  if (!targetDot) return;
 
-const dragStop = () => {
-  isDragging = false;
-  carousel.classList.remove("dragging");
-};
+  const currentSlide = track.querySelector(".current-slide");
+  const currentDot = dotsNav.querySelector(".current-slide");
+  const targetIndex = dots.findIndex((dot) => dot === targetDot);
+  const targetSlide = slides[targetIndex];
 
-const autoPlay = () => {
-  if (window.innerWidth < 800) return; //Return on smaller than 800px screen
-  //Auto play carousel every 2.5s
-  timeoutId = setTimeout(() => (carousel.scrollLeft += firstCardWidth), 2500);
-};
-
-autoPlay();
-
-const infiniteScroll = () => {
-  // If carousel is at START go to END
-  if (carousel.scrollLeft === 0) {
-    carousel.classList.add("no-transition");
-    carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.scrollWidth;
-    carousel.classList.remove("no-transition");
-  }
-  // If carousel is at END, go to START
-  else if (
-    Math.ceil(carousel.scrollLeft) ===
-    carousel.scrollWidth - carousel.offsetWidth
-  ) {
-    carousel.classList.add("no-transition");
-    carousel.scrollLeft = carousel.offsetWidth;
-    carousel.classList.remove("no-transition");
-  }
-
-  //Clear existing timeout and start of mouse is not hovering over carousel
-  clearTimeout(timeoutId);
-  if (!sliderContainer.matches(":hover")) autoPlay();
-};
-
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("mouseover", dragging);
-document.addEventListener("mouseup", dragStop);
-carousel.addEventListener("scroll", infiniteScroll);
-sliderContainer.addEventListener("mouseenter", () => clearTimeout(timeoutId));
-sliderContainer.addEventListener("mouseleave", autoPlay);
+  moveSlides(track, currentSlide, targetSlide);
+  updateDots(currentDot, targetDot);
+  hideArrowButtons(slides, previousBtn, nextBtn, targetIndex);
+});
