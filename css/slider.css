@@ -1,0 +1,115 @@
+.slider-container {
+  max-width: 100vw;
+  width: 100%;
+  margin: 50px auto 50px auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 35px;
+}
+
+.slider-container .arrow {
+  width: 2.5vw;
+  height: 5vh;
+  background-color: red;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 1.25rem;
+  transform: translateY(-50%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.slider-container .arrow:first-child {
+  left: -22px;
+}
+
+.slider-container .arrow:last-child {
+  right: -22px;
+}
+
+.slider-container .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  gap: 8rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: 0;
+  scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel :where(.card, .img) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel .card {
+  background-color: red;
+  /* scroll-snap-type: start; */
+  /* height: 80vh; */
+  /* list-style: none; */
+  /* border-radius: 8px; */
+  /* padding-bottom: 15px; */
+  /* background-color: red; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* flex-direction: column; */
+  cursor: pointer;
+}
+
+.card .img {
+  /* background-color: #8b53ff; */
+  /* width: 140px;
+  height: 140px; */
+  width: 100%;
+  height: 100%;
+}
+
+.card .img img {
+  /* width: 140px;
+  width: 140px; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2.5rem;
+}
+
+@media screen and (max-width: 900px) {
+  .slider-container .carousel {
+    grid-auto-columns: 100%;
+  }
+}
+
+/* PROMENI */
+/* PROMENI */
+/* PROMENI */
+/* PROMENI */
+/* PROMENI */
+/* PROMENI */

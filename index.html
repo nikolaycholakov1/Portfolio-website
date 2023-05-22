@@ -9,6 +9,7 @@
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="css/style.css " />
     <link rel="stylesheet" href="css/media.css " />
+    <link rel="stylesheet" href="css/slider.css " />
     <link rel="stylesheet" href="css/laptop.css" />
 
     <!-- ICONS -->
@@ -21,15 +22,11 @@
     <!-- Header Section -->
 
     <header class="header">
-      <div class="logo">
-        <h2>NMC.DEV</h2>
-      </div>
+      <h2 class="heading">NMC.<span>DEV</span></h2>
 
       <i class="bx bx-menu" id="menu-icon"></i>
 
       <div class="lights">
-        <!-- <button id="light-mode"><i class='bx bxs-sun' ></i></button>
-        <button id="dark-mode"><i class='bx bxs-moon' ></i></button> -->
         <i onclick="setLightMode()" class="bx bxs-sun light"></i>
         <i onclick="setDarkMode()" class="bx bxs-moon dark"></i>
       </div>
@@ -47,13 +44,8 @@
 
     <section class="home" id="home">
       <div class="home-content">
-        <h3>Hello<span>,</span> my name is</h3>
         <h1>Nikolay Cholakov</h1>
-        <h3>And I'm a <span class="multiple-text"></span></h3>
-        <!-- <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-          accusantium a expedita, iusto quos laboriosam?
-        </p> -->
+        <h3><span class="multiple-text"></span></h3>
         <div class="social-media">
           <a href="https://github.com/nikolaycholakov1" target="_blank"
             ><img src="images/github-logo.ico" alt=""
@@ -62,11 +54,9 @@
             ><img src="images/linkedin-logo.ico" alt=""
           /></a>
         </div>
-        <div class="contact-details">
-          <p><span>e-mail:</span> nikolaycholakovnmc@gmail.com</p>
-          <p><span>phone number:</span> +359884871445</p>
-        </div>
+
         <a href="#" class="button cv">Download CV</a>
+        <a href="#contact" class="button cv">Contact Me</a>
       </div>
 
       <div class="home-img">
@@ -94,7 +84,9 @@
     <!-- Skills section -->
 
     <section class="skills" id="skills">
-      <h2 class="heading">My <span>skills</span></h2>
+      <h2 class="heading">
+        My <span>skills</span> And <span>experience</span>
+      </h2>
       <div class="skills-container">
         <div class="laptop">
           <div class="screen">
@@ -210,6 +202,67 @@
               <h3>Postman</h3>
             </div>
           </div>
+        </div>
+
+        <div class="slider-container">
+          <div id="left" class="arrow"></div>
+          <ul class="carousel">
+            <li class="card">
+              <div class="img">
+                <img
+                  src="images/certificates/basics-top.png"
+                  alt=""
+                  draggable="false"
+                />
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img
+                  src="images/certificates/fundamentals-top.png"
+                  alt=""
+                  draggable="false"
+                />
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img
+                  src="images/certificates/advanced-top.png"
+                  alt=""
+                  draggable="false"
+                />
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img
+                  src="images/certificates/python oop-top.png"
+                  alt=""
+                  draggable="false"
+                />
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img
+                  src="images/certificates/html and css-top.png"
+                  alt=""
+                  draggable="false"
+                />
+              </div>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img
+                  src="images/certificates/js frontend-top.png"
+                  alt=""
+                  draggable="false"
+                />
+              </div>
+            </li>
+          </ul>
+          <div id="right" class="arrow"></div>
         </div>
       </div>
     </section>
@@ -419,5 +472,6 @@
     <!-- Custom JS -->
 
     <script src="js/script.js"></script>
+    <script src="js/slider.js"></script>
   </body>
 </html>

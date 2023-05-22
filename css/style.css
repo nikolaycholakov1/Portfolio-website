@@ -22,6 +22,7 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  color-scheme: light dark;
 }
 
 body {
@@ -177,11 +178,6 @@ span {
   box-shadow: 0 0 1rem var(--main-color);
 }
 
-.contact-details p {
-  margin-bottom: 3rem;
-  font-size: 2.4rem;
-}
-
 .button {
   display: inline-block;
   padding: 1rem 2.8rem;
@@ -306,6 +302,16 @@ span {
 .skills-box h3 {
   font-size: 2.6rem;
   margin-top: 2rem;
+}
+
+.experience-container {
+  width: 76vw;
+  height: 100vh;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  /* background: linear-gradient(to right, rgba(255, 65, 108), rgba(255, 75, 43)); */
 }
 
 /* PORTFOLIO STYLING */
