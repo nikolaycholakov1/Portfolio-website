@@ -248,6 +248,10 @@ span {
   text-align: center;
 }
 
+.skills {
+  margin-bottom: 4rem;
+}
+
 .skills h2 {
   margin-bottom: 5rem;
   /* text-align: center; */
@@ -331,7 +335,7 @@ span {
 
 .portfolio-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
   justify-content: space-around;
   gap: 5rem;
 }
@@ -344,9 +348,21 @@ span {
   display: flex;
 }
 
+.portfolio-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  z-index: 1;
+}
+
 .portfolio-box img {
   width: 100%;
   transition: 0.5s ease;
+  z-index: 0;
 }
 
 .portfolio-box:hover img {
@@ -368,6 +384,7 @@ span {
   padding: 0 4rem;
   transform: translateY(100%);
   transition: 0.5s ease;
+  z-index: 2;
 }
 
 .portfolio-box:hover .portfolio-layer {
@@ -378,12 +395,14 @@ span {
   font-size: 3rem;
   text-decoration: underline;
   margin-bottom: 3rem;
+  color: white;
 }
 
 .portfolio-layer p {
-  font-size: 1.6rem;
+  font-size: 2.6rem;
   /* margin: 0.3rem 0 1rem; */
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  color: white;
 }
 
 .portfolio-layer .utilised-skills {
@@ -392,7 +411,7 @@ span {
   justify-content: space-evenly;
   font-size: 2.6rem;
   font-weight: bold;
-  gap: 2rem;
+  gap: 5rem;
   margin-bottom: 3rem;
 }
 
@@ -408,16 +427,8 @@ span {
   align-items: center;
   width: 5rem;
   height: 5rem;
-  color: var(--text-color);
+  color: white;
   border-radius: 50%;
-}
-
-.portfolio-layer a i {
-  color: var(--second-bg-color);
-  font-size: 1.6rem;
-  background-color: red;
-  display: flex;
-  align-items: left;
 }
 
 /* CONTACT SECTION */
