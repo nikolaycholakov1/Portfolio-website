@@ -215,14 +215,29 @@ function getDisplayProperty(container) {
 }
 
 // MODAL??
+// const openBtn = document.querySelector("[data-open-modal]");
+// const closeBtn = document.querySelector("[data-close-modal]");
+// const modal = document.querySelector("[data-modal]");
+
+// openBtn.addEventListener("click", () => {
+//   modal.showModal();
+// });
+
+// closeBtn.addEventListener("click", () => {
+//   modal.close();
+// });
+
+const form = document.getElementById("contact-form");
 const openBtn = document.querySelector("[data-open-modal]");
 const closeBtn = document.querySelector("[data-close-modal]");
 const modal = document.querySelector("[data-modal]");
 
-openBtn.addEventListener("click", () => {
+openBtn.addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent the form from submitting immediately
   modal.showModal();
 });
 
 closeBtn.addEventListener("click", () => {
   modal.close();
+  form.submit(); // Submit the form programmatically after the modal is acknowledged
 });

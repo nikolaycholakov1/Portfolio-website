@@ -233,11 +233,6 @@
             <p>
               An online bookstore built using Django. It offers an intuitive browsing experience and a user-friendly interface for purchasing books. Users can register an account to buy books and write reviews. Additionally, staff accounts have the capability to manage orders and publish books.
             </p>
-            <hr>
-            <hr>
-            <hr>
-            <hr>
-            <hr>
             <div class="utilised-skills">
               <div class="skills-box img-size">
                 <img src="images/html-5.png" style="width: 64px; height: 64px;" alt="HTML" />
@@ -279,64 +274,32 @@
 
     <section class="section contact" id="contact">
       <h2 class="heading">Contact <span>Me!</span></h2>
-
-      <form
-        action="https://formsubmit.co/9c34c3de5059db8f28bca1879baebc80"
-        id="contact-form"
-        method="POST"
-      >
+      <form action="https://formsubmit.co/9c34c3de5059db8f28bca1879baebc80" id="contact-form" method="POST">
         <div class="input-box">
           <!-- Disable Captcha -->
           <input type="hidden" name="_captcha" value="false" />
-
-          <input
-            type="hidden"
-            name="_next"
-            value="http://127.0.0.1:5500/index.html"
-          />
-
+          <input type="hidden" name="_next" value="https://nikolaycholakov1.github.io/Portfolio-website/#home" />
+    
           <input id="name" name="name" placeholder="John Doe" required />
           <input type="text" name="phone" placeholder="0881234567" required />
         </div>
-
+    
         <div class="input-box">
-          <input
-            type="email"
-            name="email"
-            placeholder="demo@gmail.com"
-            required
-          />
+          <input type="email" name="email" placeholder="demo@gmail.com" required />
           <input type="text" name="subject" placeholder="Job offer" required />
         </div>
-
-        <!-- TODO: The Text in the message is not in the email -->
-
-        <textarea
-          name=""
-          rows="10"
-          name="message"
-          placeholder="Your Message"
-        ></textarea>
-
-        <!-- <button type="submit" id="form-submit-btn" class="button">
-          <a href="success.html">Send Message</a>
-        </button> -->
-
-        <button
-          data-open-modal
-          type="submit"
-          id="form-submit-btn"
-          class="button"
-        >
-          Send Message
-        </button>
-
+    
+        <textarea name="" rows="10" name="message" placeholder="Your Message"></textarea>
+    
+        <button data-open-modal type="submit" id="form-submit-btn" class="button">Send Message</button>
+    
         <dialog data-modal class="modal">
-          <div>Message Sent Successsfully!</div>
+          <div>Message Sent Successfully!</div>
           <button data-close-modal class="button">Close</button>
         </dialog>
       </form>
     </section>
+    
 
     <!-- Footer section -->
 
